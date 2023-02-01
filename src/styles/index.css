@@ -1,0 +1,31 @@
+
+@layer base {
+  input[type="radio"] + label span {
+    transition: background .2s, transform .2s;
+  }
+  
+  input[type="radio"] + label span:hover,
+  input[type="radio"] + label:hover span{
+    @apply border-app-green;
+    transform: scale(1.05);
+  } 
+  
+  input[type="radio"]:checked + label span {
+    @apply bg-app-green;
+    box-shadow: 0px 0px 0px 3px white inset;
+  }
+  
+  input[type="radio"]:checked + label{
+    @apply text-app-green;
+  }
+}
+
+@layer components {
+  .btn-default {
+    @apply text-app-gray-inactive;
+  }
+
+  .btn-active {
+    @apply text-app-green focus:border-b-[3px] focus:border-app-green;
+  }
+}
