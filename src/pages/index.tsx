@@ -29,11 +29,13 @@ export default function Home() {
       <div className="relative w-screen h-screen flex items-center overflow-hidden">
         <div className="flex flex-col gap-3 w-full md:w-3/4 lg:w-564 px-4 lg:pl-32 md:pr-0 z-10">
           <div className="relative w-12 h-12 md:w-16 md:h-16"><Image fill alt="Logo" src='/logo.svg' /></div>
-          <div className="text-4xl md:text-5xl font-extrabold">
+          <div className="inline text-4xl md:text-5xl font-extrabold">
             We offer &ndash;
             {
               services.map((service, index) => (
-                <span key={index} className="opacity-0 absolute pl-2 capitalize h-16 overflow-hidden animate-[topToBottom_linear_infinite]" style={{ animationDuration: `${services.length * 2.5}s`, animationDelay: `${index * 2.5}s` }}>{service}</span>
+                <span key={index} className="pl-2 pt-12 -translate-y-12 inline absolute overflow-hidden">
+                  <div className="opacity-0 capitalize animate-[topToBottom_linear_infinite]" style={{ animationDuration: `${services.length * 2.5}s`, animationDelay: `${index * 2.5}s` }}>{service}</div>
+                </span>
               ))
             }
           </div>
